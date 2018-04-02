@@ -1,4 +1,5 @@
 from src.common.database import Database
+from src.models.blog import Blog
 import uuid
 
 __author__ = 'cyjm'
@@ -51,7 +52,7 @@ class User(object):
         session['email'] = None
 
     def get_blogs(self):
-        pass
+        return Blog.find_by_author_id(self._id)
 
     def json(self):
         return{
