@@ -1,5 +1,3 @@
-#login-form, #register-form{
-    padding: 25px;
-    margin: auto;
-    width: 50%;
+.user-form-group{
+    margin-top: 5%;
     }
