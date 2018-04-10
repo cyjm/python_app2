@@ -1,9 +1,9 @@
 from src.common.database import Database
-
-__author__ = 'cyjm'
-
+from src.models.blog import Blog
 from flask import Flask, render_template, request, session
 from src.models.user import User
+
+__author__ = 'cyjm'
 
 app = Flask(__name__)
 app.secret_key = "secret"
@@ -59,6 +59,13 @@ def user_blogs(user_id = None):
     blogs = user.get_blogs()
 
     return  render_template('user_blogs.html', blogs=blogs, email=user.email)
+
+@app.route('/posts/<string:blog_id>')
+def blog_posts(blog_id):
+    blog = Blog.from_mongo(blog_id)
+    posts = blog.get_posts()
+
+    return render_template('posts.html', posts=posts, blog_title=blog.title)
 
 if __name__ == '__main__':
     app.run()
