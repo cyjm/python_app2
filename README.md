@@ -5,5 +5,5 @@ Using Flask.
 Database - mongoDB.  
   
 Простое приложение управляющее веб-блогом.  
-Использует Flask. 
-БД - mongoDB.
+Использует Flask.  
+БД - mongoDB.  
